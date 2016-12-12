@@ -5,7 +5,7 @@ let gitarenModule = angular.module("app.gitaren", []);
 import GitarenConfig from "./gitaren.config";
 gitarenModule.config(GitarenConfig);
 
-import GitarenCtrl from "./gitaren.controller";
-gitarenModule.controller(GitarenCtrl);
+import GitarenController from "./gitaren.controller";
+gitarenModule.controller("GitarenCtrl", GitarenController);
 
 export default gitarenModule;

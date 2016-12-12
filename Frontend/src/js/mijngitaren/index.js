@@ -6,6 +6,6 @@ import MijnGitarenConfig from "./mijngitaren.config";
 mijngitarenModule.config(MijnGitarenConfig);
 
 import MijnGitarenController from "./mijngitaren.controller";
-mijngitarenModule.controller(MijnGitarenController);
+mijngitarenModule.controller("MijnGitarenCtrl",MijnGitarenController);
 
 export default mijngitarenModule;

@@ -6,8 +6,7 @@ function HomeConfig($stateProvider) {
     url: '/',
     controller: 'HomeCtrl',
     controllerAs: '$ctrl',
-    templateUrl: 'home/home.html',
-    title: 'Home'
+    templateUrl: 'home/home.html'
   });
 
 };
