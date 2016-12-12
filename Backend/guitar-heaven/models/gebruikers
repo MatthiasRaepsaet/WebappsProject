@@ -1,0 +1,10 @@
+var mongoose = require("mongoose");
+
+var GebruikerSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String,
+    guitars: [{type: mongoose.Schema.Types.ObjectId, ref:"Guitar"}]
+});
+
+mongoose.model("Gebruiker", GebruikerSchema);
