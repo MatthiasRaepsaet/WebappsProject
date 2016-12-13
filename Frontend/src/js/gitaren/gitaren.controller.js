@@ -1,6 +1,9 @@
-class GitarenCtrl{
-    constructor(){
+class GitarenCtrl {
+    constructor(gitaren){
         "ngInject";
+        this.gitaren = gitaren;
     }
+
 }
+
 export default GitarenCtrl;

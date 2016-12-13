@@ -4,6 +4,7 @@ var GebruikerSchema = new mongoose.Schema({
     name: String,
     email: String,
     password: String,
+    jwt: {type: String, default: null},
     guitars: [{type: mongoose.Schema.Types.ObjectId, ref:"Guitar"}]
 });
 

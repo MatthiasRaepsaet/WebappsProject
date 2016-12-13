@@ -3,57 +3,20 @@
     <div class="nav-wrapper orange">
         <a href="#" class="brand-logo">GuitarHeaven</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class="orange darken-3"><a href="sass.html">Alle Gitaren</a></li>
-            <li><a href="badges.html">Mijn Gitaren</a></li>
+            <li class="orange darken-3"><a ui-sref-active="inactive" ui-sref="app.gitaren">Alle Gitaren</a></li>
+            <li class="nav-item"><a ui-sref="app.mijngitaren">Mijn Gitaren</a></li>
         </ul>
     </div>
 </nav>
 <div class="container row" style="margin-top: 10px;">
-    <div class="col s4" style="margin-bottom: 10px">
+    <div class="col s4" style="margin-bottom: 10px" ng-repeat="gitaar in $ctrl.gitaren">
         <div class="orange center z-depth-3">
             <br>
-            dit is een test
+            Naam: {{gitaar.name}}
             <br>
-            <a class="btn-floating btn-large waves-effect waves-light red" style="margin: 10px">+</a>
-        </div>
-    </div>
-
-    <div class="col s4" style="margin-bottom: 10px">
-        <div class="orange center z-depth-3">
+            Type: {{gitaar.type}}
             <br>
-            dit is een test
-            <br>
-            <a class="btn-floating btn-large waves-effect waves-light red" style="margin: 10px">+</a>
-        </div>
-    </div>
-    <div class="col s4" style="margin-bottom: 10px">
-        <div class="orange center z-depth-3">
-            <br>
-            dit is een test
-            <br>
-            <a class="btn-floating btn-large waves-effect waves-light red" style="margin: 10px">+</a>
-        </div>
-    </div>
-    <div class="col s4">
-        <div class="orange center z-depth-3">
-            <br>
-            dit is een test
-            <br>
-            <a class="btn-floating btn-large waves-effect waves-light green" style="margin: 10px"></a>
-        </div>
-    </div>
-    <div class="col s4">
-        <div class="orange center z-depth-3">
-            <br>
-            dit is een test
-            <br>
-            <a class="btn-floating btn-large waves-effect waves-light red" style="margin: 10px">+</a>
-        </div>
-    </div>
-    <div class="col s4">
-        <div class="orange center z-depth-3">
-            <br>
-            dit is een test
+            Merk: {{gitaar.brand}}
             <br>
             <a class="btn-floating btn-large waves-effect waves-light red" style="margin: 10px">+</a>
         </div>
