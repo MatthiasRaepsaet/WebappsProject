@@ -11,7 +11,7 @@ import './config/app.templates';
 import './layout';
 import './components';
 import './home';
-import './profile';
+//import './profile';
 import './article';
 import './services';
 import './gitaren';
@@ -25,7 +25,7 @@ const requires = [
     'app.layout',
     'app.components',
     'app.home',
-    'app.profile',
+    //'app.profile',
     'app.article',
     'app.services',
     "app.gitaren",

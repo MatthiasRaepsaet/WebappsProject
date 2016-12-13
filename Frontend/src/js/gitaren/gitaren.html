@@ -9,14 +9,14 @@
     </div>
 </nav>
 <div class="container row" style="margin-top: 10px;">
-    <div class="col s4" style="margin-bottom: 10px">
+    <div class="col s4" style="margin-bottom: 10px" ng-repeat="gitaar in $ctrl.gitaren">
         <div class="orange center z-depth-3">
             <br>
-            Naam: {{}}
+            Naam: {{gitaar.name}}
             <br>
-            Type: {{}}
+            Type: {{gitaar.type}}
             <br>
-            Merk: {{}}
+            Merk: {{gitaar.brand}}
             <br>
             <a class="btn-floating btn-large waves-effect waves-light red" style="margin: 10px">+</a>
         </div>
