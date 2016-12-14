@@ -57,7 +57,7 @@ router.post("/gebruikers/:gebruiker/guitars/:guitar", function (req, res, next) 
     var guitar = new Guitar(req.body);
     guitar.gebruiker = req.gebruiker;
 
-    guitar.save(function(err, comment){
+    guitar.save(function(err, guitar){
         if(err){ return next(err); }
 
         req.gebruiker.guitars.push(guitar);
@@ -69,12 +69,18 @@ router.post("/gebruikers/:gebruiker/guitars/:guitar", function (req, res, next) 
     });
 })
 
-router.get('/gebruiker/:gebruiker', function(req, res, next) {
-    req.gebruiker.populate('guitars', function(err, gebruiker) {
-        if (err) { return next(err); }
+router.param('/gebruiker', function(req, res, next, id) {
+    var query = Gebruiker.findById(id);
 
-        res.json(gebruiker);
+    query.exec(function (err, gebruiker){
+        if (err) { return next(err); }
+        if (!gebruiker) { return next(new Error('can\'t find post')); }
+
+        req.gebruiker = gebruiker;
+        return next();
     });
 });
+
+
 
 module.exports = router;

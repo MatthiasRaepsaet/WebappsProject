@@ -9,29 +9,58 @@
   <br>
   <h1 class="orange-text">GuitarHeaven</h1>
   <div class="row">
-    <form class="col s12">
+
+
+    <div class="col s3"></div>
+    <form ng-submit="$ctrl.checkUser()" class="col s6">
+      <fieldset>
+
+        <fieldset class="form-group">
+          <input class="form-control form-control-lg"
+                 type="email"
+                 placeholder="Email"
+                 ng-model="$ctrl.formData.email" />
+        </fieldset>
+
+        <fieldset class="form-group">
+          <input class="form-control form-control-lg"
+                 type="password"
+                 placeholder="Password"
+                 ng-model="$ctrl.formData.password" />
+        </fieldset>
+
+        <button class="btn btn-lg btn-primary pull-xs-right"
+                type="submit"
+                >Login
+        </button>
+
+      </fieldset>
+    </form>
+    <div class="col s3"></div>
+
+
+
+    <!--<form class="col s12" ng-submit="$ctrl.checkUser()">
       <div class="row">
         <div class="col s3"></div>
         <div class="input-field col s6">
-          <input id="email" type="email" class="validate" placeholder="Email">
-          <label for="email"></label>
+          <input  type="email" class="validate" placeholder="Email">
         </div>
         <div class="col s3"></div>
       </div>
       <div class="row">
         <div class="col s3"></div>
         <div class="input-field col s6">
-          <input id="password" type="password" class="validate" placeholder="Password">
-          <label for="password"></label>
+          <input  type="password" class="validate" placeholder="Password" ng-model="$ctrl.formData.email">
         </div>
         <div class="col s3"></div>
       </div>
       <br>
       <div class="row">
         <div class="col s3"></div>
-        <a class="waves-effect waves-light btn col s6 orange">Login</a>
+        <a class="waves-effect waves-light btn col s6 orange" type="submit" ng-model="$ctrl.formData.password">Login</a>
         <div class="col s3"></div>
       </div>
-    </form>
+    </form>-->
   </div>
 </div>

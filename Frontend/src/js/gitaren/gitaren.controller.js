@@ -1,6 +1,7 @@
 class GitarenCtrl {
-    constructor(gitaren){
+    constructor(gitaren, Gebruikers){
         "ngInject";
+        this._Gebruikers = Gebruikers;
         this.gitaren = gitaren;
     }
 
