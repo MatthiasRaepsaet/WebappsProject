@@ -6,17 +6,18 @@ class HomeCtrl {
         this.appName = AppConstants.appName;
         this._$state = $state;
         this._Gebruikers = Gebruikers;
-        console.log(gebruikers);
+        //console.log(gebruikers);
         this.formData = null;
     }
 
     checkUser() {
 
-        this._Gebruikers.checkUserService(this.gebruikers, this.formData);
-        console.log("test");
-        this._Gebruikers._$window.localStorage.setItem("userData", this.gebruikers[0]._id);
-        console.log(this._Gebruikers._$window.localStorage.getItem("userData"));
-        this._Gebruikers._$state.go("app.gitaren");
+        this._Gebruikers.checkUserService(this.gebruikers, this.formData, this._Gebruikers);
+
+        //this._Gebruikers._$window.localStorage.setItem("userData", this.gebruikers[0]._id);
+        //console.log(this._Gebruikers._$window.localStorage.getItem("userData"));
+        //this._Gebruikers.testlog();
+        //this._Gebruikers._$state.go("app.gitaren");
     }
 }
 

@@ -57,7 +57,7 @@ router.post("/gebruikers/:gebruiker/guitars/:guitar", function (req, res, next) 
     var guitar = new Guitar(req.body);
     guitar.gebruiker = req.gebruiker;
 
-    guitar.save(function(err, comment){
+    guitar.save(function(err, guitar){
         if(err){ return next(err); }
 
         req.gebruiker.guitars.push(guitar);
