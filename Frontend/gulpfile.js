@@ -9,6 +9,7 @@ var rename        = require('gulp-rename');
 var templateCache = require('gulp-angular-templatecache');
 var uglify        = require('gulp-uglify');
 var merge         = require('merge-stream');
+var mocha = require("gulp-mocha");
 
 // Where our files are located
 var jsFiles   = "src/js/**/*.js";
@@ -40,6 +41,14 @@ gulp.task('browserify', ['views'], function() {
       .pipe(gulp.dest('./build/'));
 });
 
+
+
+gulp.task('test', () =>
+    gulp.src('test/test.js', {read: false})
+    // gulp-mocha needs filepaths so you can't have any plugins before it
+        .pipe(mocha({reporter: 'nyan'}))
+);
+
 gulp.task('html', function() {
   return gulp.src("src/index.html")
       .on('error', interceptErrors)
@@ -69,6 +78,14 @@ gulp.task('build', ['html', 'browserify'], function() {
   return merge(html,js);
 });
 
+// const mocha = require('gulp-mocha');
+//
+// gulp.task('default', () =>
+//     gulp.src('test.js', {read: false})
+//     // gulp-mocha needs filepaths so you can't have any plugins before it
+//         .pipe(mocha({reporter: 'nyan'}))
+// );
+
 gulp.task('default', ['html', 'browserify'], function() {
 
   browserSync.init(['./build/**/**.**'], {
@@ -79,6 +96,8 @@ gulp.task('default', ['html', 'browserify'], function() {
       port: 4001
     }
   });
+
+
 
   gulp.watch("src/index.html", ['html']);
   gulp.watch(viewFiles, ['views']);

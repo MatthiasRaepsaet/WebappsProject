@@ -3,6 +3,7 @@ class GitarenCtrl {
         "ngInject";
         this._Gebruikers = Gebruikers;
         this.gitaren = gitaren;
+        console.log(this.gitaren);
     }
 
 }
