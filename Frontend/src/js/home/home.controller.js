@@ -13,7 +13,7 @@ class HomeCtrl {
     checkUser() {
 
         this._Gebruikers.checkUserService(this.gebruikers, this.formData, this._Gebruikers);
-
+        console.log(this.gebruikers)
         //this._Gebruikers._$window.localStorage.setItem("userData", this.gebruikers[0]._id);
         //console.log(this._Gebruikers._$window.localStorage.getItem("userData"));
         //this._Gebruikers.testlog();

@@ -13,7 +13,8 @@ export default class Gebruikers{
     }
 
     storeUser(gebruikerId){
-        this._$window.localStorage.getItem("userData", gebruikerId);
+        this._$window.localStorage.removeItem("userData");
+        this._$window.localStorage.setItem("userData", gebruikerId);
         console.log("stored");
     }
 
@@ -21,6 +22,7 @@ export default class Gebruikers{
         "ngInject;"
         gebruikerData.forEach(function (gebruiker) {
             if(gebruiker.email === credentialData.email && gebruiker.password === credentialData.password){
+
                 gebruikersService.storeUser(gebruiker._id);
                 gebruikersService._$state.go("app.gitaren");
             }
